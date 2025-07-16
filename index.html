@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaemin Kim | RF & Antenna Systems Engineer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.7;
+        }
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header-container {
+            max-width: 900px;
+            margin-top: 50px;
+        }
+        .timeline-container {
+            max-width: 1100px;
+            margin-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        header {
+            margin-bottom: 70px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .header-text {
+            text-align: left;
+        }
+        .header-text h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin: 0;
+        }
+        .header-text p.subtitle { /* subtitle 클래스 추가 */
+            font-size: 1.2em;
+            color: #555;
+            margin: 5px 0 15px 0;
+        }
+        .header-text p.expertise { /* expertise 클래스 추가 */
+            font-size: 1.0em;
+            color: #666;
+            margin: 0;
+            font-style: italic;
+        }
+        .icon-links {
+            margin-top: 20px;
+        }
+        .icon-links a {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .icon-links svg {
+            width: 28px;
+            height: 28px;
+            fill: #555;
+            transition: fill 0.2s ease;
+        }
+        .icon-links a:hover svg {
+            fill: #000;
+        }
+
+        .timeline {
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30%;
+            margin-left: -1px;
+            top: 5px;
+            height: 100%;
+            width: 2px;
+            background-color: #e0e0e0;
+        }
+        .timeline-item {
+            display: flex;
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 30%;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background-color: #ccc;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .timeline-date {
+            width: 30%;
+            text-align: right;
+            padding-right: 30px;
+            box-sizing: border-box;
+            font-weight: bold;
+            color: #777;
+        }
+        .timeline-content {
+            width: 70%;
+            padding-left: 30px;
+            box-sizing: border-box;
+        }
+        .timeline-content-inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .timeline-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: contain;
+            flex-shrink: 0;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .timeline-inner-content {
+            flex-grow: 1;
+        }
+        .timeline-inner-content h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.4em;
+            color: #2c3e50;
+        }
+        .timeline-inner-content .role {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .timeline-inner-content p, .timeline-inner-content ul {
+            margin: 0;
+            font-size: 1.0em;
+        }
+        .timeline-inner-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .timeline-inner-content li {
+            margin-bottom: 10px;
+        }
+        .timeline-inner-content a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .timeline-inner-content a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-text {
+                text-align: center;
+            }
+            .timeline::before {
+                left: 10px;
+            }
+            .timeline-item {
+                flex-direction: column;
+            }
+            .timeline-item::before {
+                left: 10px;
+            }
+            .timeline-date, .timeline-content {
+                width: 100%;
+                text-align: left;
+                padding-left: 40px;
+                padding-right: 0;
+            }
+            .timeline-date {
+                margin-bottom: 10px;
+                padding-left: 0;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container header-container">
+        <header>
+            <img src="images/profile.jpg" alt="Jaemin Kim Profile Picture" class="profile-picture">
+            <div class="header-text">
+                <h1>Jaemin Kim</h1>
+                <p class="subtitle">RF & Antenna Systems Engineer</p>
+                <p class="expertise">Ph.D. Candidate applying Metasurface technology to next-generation Satellite and Aerospace platforms.</p>
+                <div class="icon-links">
+                    <a href="mailto:jaemin.jmk@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg></a>
+                    <a href="https://www.linkedin.com/in/jaemin-kim-929996136/" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-3.06v8.37h3.06v-4.93c0-.83.06-1.66.57-2.25.52-.6 1.28-.61 1.76-.02.6.75.56 1.88.56 2.27v4.93h3.12zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68zm-1.56 10h3.12v-8.37H5.32v8.37z"/></svg></a>
+                    <a href="https://scholar.google.com/citations?user=s5B1VJ4AAAAJ&hl=en" target="_blank" title="Google Scholar"><svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></a>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="container timeline-container">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Sep 2019 - Present</div>
+                <div class="timeline-content">
+                    <div class="timeline-content-inner">
+                        <img src="images/UT.png" alt="University of Toronto Logo" class="timeline-logo">
+                        <div class="timeline-inner-content">
+                            <h3>University of Toronto</h3>
+                            <div class="role">Ph.D. Candidate</div>
+                            <p>
+                                Under the guidance of my advisor, <a href="https://scholar.google.com/citations?user=GlZBRZEAAAAJ&hl=en" target="_blank">Prof. George V. Eleftheriades</a>, my Ph.D. research focused on advancing Huygens' metasurfaces to solve a fundamental challenge in modern antenna systems: enhancing the scan range of phased-array antennas. This work is directly applicable to creating more compact, cost-effective, and high-performance beam-steering systems for next-generation applications like LEO satellite constellations, 5G/6G communications, and advanced radar platforms.
+                            </p>
+                            <p>&nbsp;</p> 
+                            <div class="role">Key Contributions:</div>
+                            <ul>
+                                <li>
+                                    Designed and experimentally verified a compact, near-field two-lens HMS system to double the scan-angle of phased arrays. This approach was successfully scaled to E-band (73 GHz), demonstrating its feasibility for next-generation communication systems.
+                                    (<a href="https://ieeexplore.ieee.org/abstract/document/9984166" target="_blank">View Publication</a>)
+                                </li>
+                                <li>
+                                    Developed a novel dual-polarized Huygens' metasurface that achieves wide-angle scanning without the directivity loss typically found in other lens-based solutions for scan-angle enhancement. This design maintains high performance for both orthogonal polarizations, a critical feature for advanced communication and sensing platforms.
+                                    (<a href="https://ieeexplore.ieee.org/abstract/document/10980303" target="_blank">View Publication</a>)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Feb 2014 - Feb 2018</div>
+                <div class="timeline-content">
+                    <div class="timeline-content-inner">
+                        <img src="images/SD.jpeg" alt="Silicon Display Logo" class="timeline-logo">
+                        <div class="timeline-inner-content">
+                            <h3>Silicon Display Co., Ltd.</h3>
+                            <div class="role">Researcher</div>
+                            <p>
+                                As a researcher, I focused on the development of next-generation image sensors using TFT backplane technology, including X-ray, IR, and optical fingerprint sensors. During this time, I had the valuable opportunity to collaborate on projects with global partners including Apple Inc. (USA), Integrated Biometrics (USA), Cross Match Technologies (USA), and Jenetric (Germany).
+                            </p>
+                            <p>
+                                A key highlight of my work was securing five U.S. patents for my inventions in sensor technology:
+                            </p>
+                            <ul>
+                                <li><a href="https://patents.google.com/patent/US10438042" target="_blank">Optical fingerprint recognition sensor (US 10,438,042)</a></li>
+                                <li><a href="https://patents.google.com/patent/US10424672" target="_blank">Oxide semiconductor transistor (US 10,424,672)</a></li>
+                                <li><a href="https://patents.google.com/patent/US10127430" target="_blank">Fingerprint recognition sensor (US 10,127,430)</a></li>
+                                <li><a href="https://patents.google.com/patent/US10078777" target="_blank">Fingerprint recognition sensor and portable display device (US 10,078,777)</a></li>
+                                <li><a href="https://patents.google.com/patent/US9847366" target="_blank">Infrared image sensor (US 9,847,366)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Sep 2010 - Feb 2014</div>
+                <div class="timeline-content">
+                    <div class="timeline-content-inner">
+                        <img src="images/snu.png" alt="Seoul National University Logo" class="timeline-logo">
+                        <div class="timeline-inner-content">
+                            <h3>Seoul National University</h3>
+                            <div class="role">M.Sc.Eng. in the Program in Nano Science and Technology</div>
+                            <p>
+                                During my Master's at the <a href="https://www.oenl.snu.ac.kr/" target="_blank">Organic Electronics and Nanophotonics Laboratory</a>, I dove deep into the world of organic solar cells. My research centered on studying charge transfer exciton behavior, which involved hands-on experience in the fabrication and electrical analysis of inverted solar cells. To support this, I took an inspiring course in photonics that was directly applicable to my work. I also continued to pursue the interest I developed as an undergrad by taking a class on quantum computers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">Mar 2005 - Feb 2010</div>
+                <div class="timeline-content">
+                    <div class="timeline-content-inner">
+                        <img src="images/kyunghee.png" alt="Kyung Hee University Logo" class="timeline-logo">
+                        <div class="timeline-inner-content">
+                            <h3>Kyung Hee University</h3>
+                            <div class="role">B.S. in Physics</div>
+                            <p>
+                                As a physics undergraduate, I developed a strong passion for fundamental principles, particularly in electromagnetics and quantum mechanics. This passion directly led to a fascination with quantum computers, and I began to delve into the principles of quantum computing and its core algorithms.
+                            </p>
+                            <p>
+                                Graduated with a GPA of 3.9/4.3.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+</body>
+</html>
